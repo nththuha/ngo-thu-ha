@@ -6,11 +6,11 @@ const Logo = () => {
   return (
     <Flex justify="center" align="center">
       <Image
-        src="/favicon.svg"
-        w={40}
-        h={40}
+        src="/img/nth/logo.png"
+        w={60}
+        h={60}
         style={{
-          transition: "transform 0.25s",
+          transition: "transform 0.2s",
           transform:
             scroll.y >= 10
               ? "scale(0.8) translateY(0px)"
