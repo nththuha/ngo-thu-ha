@@ -1,27 +1,30 @@
-import { Button } from "@mantine/core";
+import { ActionIcon } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import { IconArrowUp } from "@tabler/icons-react";
 import { BrowserView } from "react-device-detect";
 
 const ScrollToTopButton = () => {
   const [scroll, scrollTo] = useWindowScroll();
+
+  const scrollToTop = () => {
+    scrollTo({ y: 0 });
+  };
+
   return (
     <BrowserView>
       {scroll.y >= 10 && (
-        <Button
+        <ActionIcon
           variant="outline"
-          radius={999}
-          p={0}
+          radius="xl"
+          pos="fixed"
+          bottom="1.5rem"
+          right="1.5rem"
           w={40}
           h={40}
-          pos="fixed"
-          bottom="3rem"
-          left={"50%"}
-          onClick={() => scrollTo({ y: 0 })}
-          // bg="#ced4da"
+          onClick={scrollToTop}
         >
           <IconArrowUp />
-        </Button>
+        </ActionIcon>
       )}
     </BrowserView>
   );
