@@ -31,8 +31,8 @@ const Menu = () => {
       label: "Projects",
     },
     {
-      url: "/contact-me",
-      label: "Contact me",
+      url: "/contact",
+      label: "Contact",
     },
   ];
 

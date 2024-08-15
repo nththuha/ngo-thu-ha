@@ -2,9 +2,9 @@ export default {
   // prettier-ignore
   /* cspell:disable */
   "Hello": "Xin chào",
-  "About me": "Bản thân tôi",
+  "About me": "Về tôi",
   "Skills": "Kĩ năng",
   "Experiences": "Kinh nghiệm",
   "Projects": "Dự án",
-  "Contact me": "Liên hệ tôi",
+  "Contact": "Liên hệ",
 } satisfies Record<string, string>;

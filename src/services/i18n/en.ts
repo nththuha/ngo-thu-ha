@@ -5,5 +5,5 @@ export default {
   "Skills": "Skills",
   "Experiences": "Experiences",
   "Projects": "Projects",
-  "Contact me": "Contact me",
+  "Contact": "Contact",
 } satisfies Record<string, string>;
