@@ -22,7 +22,7 @@ const componentMap: Record<string, LazyExoticComponent> = {
   Skills: lazy(() => import("@/routes/skills")),
   Experiences: lazy(() => import("@/routes/experiences")),
   Projects: lazy(() => import("@/routes/projects")),
-  ContactMe: lazy(() => import("@/routes/contact-me")),
+  Contact: lazy(() => import("@/routes/contact")),
 };
 
 const configs: Config[] = [
@@ -59,8 +59,8 @@ const configs: Config[] = [
     },
   },
   {
-    path: "/contact-me",
-    element: "ContactMe",
+    path: "/contact",
+    element: "Contact",
     wrapper: {
       element: ServiceWrapper as Wrapper,
     },
