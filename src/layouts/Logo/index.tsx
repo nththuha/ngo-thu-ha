@@ -4,7 +4,7 @@ import { useWindowScroll } from "@mantine/hooks";
 const Logo = () => {
   const [scroll] = useWindowScroll();
   return (
-    <Flex justify="center" align="center">
+    <Flex justify="center" align="center" h="100%">
       <Image
         src="/img/nth/logo.png"
         w={60}

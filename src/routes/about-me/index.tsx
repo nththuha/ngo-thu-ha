@@ -1,7 +1,7 @@
 import useTranslation from "@/hooks/useTranslation";
 import { Flex } from "@mantine/core";
 
-const Home = () => {
+const AboutMe = () => {
   const t = useTranslation();
   return (
     <Flex direction="column">
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default AboutMe;
