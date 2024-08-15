@@ -4,6 +4,7 @@ import {
   Input,
   PasswordInput,
   Switch,
+  Text,
   createTheme,
 } from "@mantine/core";
 import classes from "./theme.module.scss";
@@ -12,6 +13,12 @@ const labelStyle = {
   fontSize: "1rem",
   fontWeight: "500",
   color: "var(--input-label-color)",
+};
+
+const textStyle = {
+  fontSize: "1rem",
+  fontWeight: "300",
+  color: "var(--mantine-color-black)",
 };
 
 // https://mantine.dev/styles/css-variables/#css-variables-resolver
@@ -41,6 +48,11 @@ export const theme = createTheme({
     },
   },
   components: {
+    Text: Text.extend({
+      styles: {
+        root: textStyle,
+      },
+    }),
     Checkbox: Checkbox.extend({
       styles: {
         label: labelStyle,

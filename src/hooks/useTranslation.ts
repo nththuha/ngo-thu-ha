@@ -13,7 +13,7 @@ export default function useTranslation(): (key?: string) => string {
         return dictionary[key];
       } else {
         logger.warn("Missing translation", key);
-        return key;
+        return "xxx";
       }
     },
     [dictionary],

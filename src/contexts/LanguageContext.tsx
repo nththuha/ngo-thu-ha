@@ -19,17 +19,17 @@ export interface LanguageContextType {
 }
 
 export const LanguageContext = createContext<LanguageContextType>({
-  language: localStorage.__LANGUAGE__ || "vi",
+  language: localStorage.__LANGUAGE__ || "en",
   dictionary: dictionaryList.vi,
 });
 
 export function LanguageProvider({
   children,
 }: LanguageProviderProps) {
-  const [language, setLanguage] = useState("vi");
+  const [language, setLanguage] = useState("en");
 
   useEffect(() => {
-    const language = localStorage.__LANGUAGE__ || "vi";
+    const language = localStorage.__LANGUAGE__ || "en";
     if (language in dictionaryList) {
       setLanguage(language);
     }
