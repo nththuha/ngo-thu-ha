@@ -1,53 +1,76 @@
 import {
+  IconAccessible,
+  IconAffiliate,
+  IconApi,
+  IconBrandDocker,
+  IconBrandFlutter,
+  IconBrandKotlin,
+  IconBrandMantine,
+  IconBrandNextjs,
+  IconBrandNodejs,
+  IconBrandPrisma,
+  IconBrandReact,
+  IconBrandReactNative,
+  IconBrandTypescript,
+  IconBrandVisualStudio,
+  IconBrandVite,
   IconClipboardText,
+  IconDatabase,
   IconDeviceMobile,
+  IconEye,
+  IconGitMerge,
+  IconSend,
   IconSettings,
   IconTools,
   IconUsers,
+  IconZoomQuestion,
 } from "@tabler/icons-react";
 
 export type Skill = {
-  category: string;
+  name: string;
   icon: React.ReactNode;
-  skills: {
-    name: string;
-    icon: React.ReactNode;
-  }[];
 };
-export const skills: Skill[] = [
+
+export type SkillCategory = {
+  name: string;
+  icon: React.ReactNode;
+  skills: Skill[];
+};
+
+export const skillCategories: SkillCategory[] = [
   {
-    category: "Frontend",
+    name: "Frontend",
     icon: <IconClipboardText />,
     skills: [
       {
         name: "ReactJS",
-        icon: <></>,
+        icon: <IconBrandReact />,
       },
       {
         name: "NextJS",
-        icon: <></>,
+        icon: <IconBrandNextjs />,
       },
       {
         name: "Vite",
-        icon: <></>,
+        icon: <IconBrandVite />,
       },
       {
         name: "TypeScript",
-        icon: <></>,
+        icon: <IconBrandTypescript />,
       },
       {
         name: "Mantine",
-        icon: <></>,
+        icon: <IconBrandMantine />,
       },
     ],
   },
   {
-    category: "Backend",
+    name: "Backend",
     icon: <IconSettings />,
     skills: [
       {
         name: "Node.js",
-        icon: <></>,
+        icon: <IconBrandNodejs />,
       },
       {
         name: "Express",
@@ -55,43 +78,43 @@ export const skills: Skill[] = [
       },
       {
         name: "Prisma",
-        icon: <></>,
+        icon: <IconBrandPrisma />,
       },
       {
         name: "RESTful APIs",
-        icon: <></>,
+        icon: <IconApi />,
       },
       {
         name: "PostgreSQL",
-        icon: <></>,
+        icon: <IconDatabase />,
       },
     ],
   },
   {
-    category: "Mobile",
+    name: "Mobile",
     icon: <IconDeviceMobile />,
     skills: [
       {
         name: "Kotlin",
-        icon: <></>,
+        icon: <IconBrandKotlin />,
       },
       {
         name: "Flutter",
-        icon: <></>,
+        icon: <IconBrandFlutter />,
       },
       {
         name: "React Native",
-        icon: <></>,
+        icon: <IconBrandReactNative />,
       },
     ],
   },
   {
-    category: "Tools",
+    name: "Tools",
     icon: <IconTools />,
     skills: [
       {
         name: "Git",
-        icon: <></>,
+        icon: <IconGitMerge />,
       },
       {
         name: "Scrum",
@@ -99,7 +122,7 @@ export const skills: Skill[] = [
       },
       {
         name: "Docker",
-        icon: <></>,
+        icon: <IconBrandDocker />,
       },
       {
         name: "ESLint",
@@ -111,33 +134,33 @@ export const skills: Skill[] = [
       },
       {
         name: "Visual Studio Code",
-        icon: <></>,
+        icon: <IconBrandVisualStudio />,
       },
       {
         name: "Postman",
-        icon: <></>,
+        icon: <IconSend />,
       },
     ],
   },
   {
-    category: "Soft skills",
+    name: "Soft skills",
     icon: <IconUsers />,
     skills: [
       {
         name: "Learning new technologies",
-        icon: <></>,
+        icon: <IconEye />,
       },
       {
         name: "Adaptability",
-        icon: <></>,
+        icon: <IconAccessible />,
       },
       {
         name: "Problem-solving",
-        icon: <></>,
+        icon: <IconZoomQuestion />,
       },
       {
         name: "Teamwork",
-        icon: <></>,
+        icon: <IconAffiliate />,
       },
     ],
   },
