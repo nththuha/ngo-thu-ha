@@ -1,5 +1,6 @@
 import { AppShell } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
+import Footer from "../Footer";
 import Header from "../Header";
 import ScrollToTopButton from "../ScrollToTopButton";
 
@@ -17,7 +18,10 @@ const ServiceWrapper = ({ children }: ServiceWrapperProps) => {
       <AppShell.Header withBorder={scroll.y >= 10}>
         <Header />
       </AppShell.Header>
-      <AppShell.Main>{children}</AppShell.Main>
+      <AppShell.Main>
+        {children}
+        <Footer />
+      </AppShell.Main>
       <ScrollToTopButton />
     </AppShell>
   );
