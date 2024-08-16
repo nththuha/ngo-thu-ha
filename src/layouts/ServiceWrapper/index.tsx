@@ -18,10 +18,10 @@ const ServiceWrapper = ({ children }: ServiceWrapperProps) => {
       <AppShell.Header withBorder={scroll.y >= 10}>
         <Header />
       </AppShell.Header>
-      <AppShell.Main>
+      <AppShell.Main mih="calc(100vh - 6rem)">
         {children}
-        <Footer />
       </AppShell.Main>
+      <Footer />
       <ScrollToTopButton />
     </AppShell>
   );
