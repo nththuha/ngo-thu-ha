@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
-    "tabler",
+    "scroller",
+    "tabler"
   ],
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",

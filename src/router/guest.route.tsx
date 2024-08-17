@@ -18,11 +18,7 @@ type Config = {
 const ServiceWrapper = lazy(() => import("@/layouts/ServiceWrapper"));
 
 const componentMap: Record<string, LazyExoticComponent> = {
-  AboutMe: lazy(() => import("@/routes/about-me")),
-  Skills: lazy(() => import("@/routes/skills")),
-  Experiences: lazy(() => import("@/routes/experiences")),
-  Projects: lazy(() => import("@/routes/projects")),
-  ContactMe: lazy(() => import("@/routes/contact-me")),
+  Home: lazy(() => import("@/routes/home")),
 };
 
 const configs: Config[] = [
@@ -32,35 +28,7 @@ const configs: Config[] = [
   },
   {
     path: "/",
-    element: "AboutMe",
-    wrapper: {
-      element: ServiceWrapper as Wrapper,
-    },
-  },
-  {
-    path: "/skills",
-    element: "Skills",
-    wrapper: {
-      element: ServiceWrapper as Wrapper,
-    },
-  },
-  {
-    path: "/experiences",
-    element: "Experiences",
-    wrapper: {
-      element: ServiceWrapper as Wrapper,
-    },
-  },
-  {
-    path: "/projects",
-    element: "Projects",
-    wrapper: {
-      element: ServiceWrapper as Wrapper,
-    },
-  },
-  {
-    path: "/contact-me",
-    element: "ContactMe",
+    element: "Home",
     wrapper: {
       element: ServiceWrapper as Wrapper,
     },

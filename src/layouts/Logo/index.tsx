@@ -18,7 +18,7 @@ const Logo = () => {
         h={60}
         onClick={handleClick}
         style={{
-          transition: "transform 0.2s",
+          transition: "transform 0.15s",
           transform:
             scroll.y >= 10
               ? "scale(0.8) translateY(0px)"

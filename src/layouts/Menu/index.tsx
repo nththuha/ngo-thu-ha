@@ -1,51 +1,43 @@
 import useTranslation from "@/hooks/useTranslation";
-import { Burger, Drawer, Flex, Group } from "@mantine/core";
+import { Burger, Drawer, Flex, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import classNames from "classnames";
+import { useState } from "react";
+import { scroller } from "react-scroll";
 import classes from "./Menu.module.scss";
-
-type MenuItem = {
-  url: string;
-  label: string;
-};
 
 const Menu = () => {
   const t = useTranslation();
-  const currentPath = window.location.pathname;
+  const [hash, setHash] = useState("");
   const [opened, { toggle, close }] = useDisclosure(false);
-  const menu: MenuItem[] = [
-    {
-      url: "/",
-      label: "About me",
-    },
-    {
-      url: "/skills",
-      label: "Skills",
-    },
-    {
-      url: "/experiences",
-      label: "Experiences",
-    },
-    {
-      url: "/projects",
-      label: "Projects",
-    },
-    {
-      url: "/contact-me",
-      label: "Contact me",
-    },
-  ];
 
-  const items = menu.map(({ url, label }) => (
-    <a
-      key={url}
-      href={url}
-      className={classNames(classes.link, {
-        [classes.active]: currentPath === url,
-      })}
+  const scrollToSection = (id: string) => {
+    scroller.scrollTo(id, {
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -90,
+    });
+    setHash(id);
+    // window.location.hash = id;
+  };
+
+  // useEffect(() => {
+  //   if (!hash) {
+  //     const hash = window.location.hash.substring(1);
+  //     scrollToSection(hash);
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
+
+  const items = menu.map(({ id, label }) => (
+    <Text
+      key={id}
+      className={classes.link}
+      onClick={() => scrollToSection(id)}
+      c={hash === id ? "primary" : "black"}
+      fw={600}
     >
       {t(label)}
-    </a>
+    </Text>
   ));
 
   return (
@@ -73,5 +65,33 @@ const Menu = () => {
     </Flex>
   );
 };
+
+type MenuItem = {
+  id: string;
+  label: string;
+};
+
+const menu: MenuItem[] = [
+  {
+    id: "about-me",
+    label: "About me",
+  },
+  {
+    id: "skills",
+    label: "Skills",
+  },
+  {
+    id: "experiences",
+    label: "Experiences",
+  },
+  {
+    id: "projects",
+    label: "Projects",
+  },
+  {
+    id: "contact",
+    label: "Contact",
+  },
+];
 
 export default Menu;

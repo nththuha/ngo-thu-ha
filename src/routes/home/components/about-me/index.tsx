@@ -4,7 +4,7 @@ import { Flex } from "@mantine/core";
 const AboutMe = () => {
   const t = useTranslation();
   return (
-    <Flex direction="column">
+    <Flex id="about-me" direction="column">
       {Array.from({ length: 100 }).map((_, index) => {
         return <div key={index}>{t("Hello")}</div>;
       })}
