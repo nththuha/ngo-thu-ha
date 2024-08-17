@@ -1,7 +1,9 @@
 import {
+  Icon,
   IconAccessible,
   IconAffiliate,
   IconApi,
+  IconBaseline,
   IconBrandDocker,
   IconBrandFlutter,
   IconBrandKotlin,
@@ -15,20 +17,25 @@ import {
   IconBrandVisualStudio,
   IconBrandVite,
   IconClipboardText,
+  IconCode,
   IconDatabase,
   IconDeviceMobile,
+  IconExplicit,
   IconEye,
   IconGitMerge,
+  IconProps,
+  IconRecycle,
   IconSend,
   IconSettings,
   IconTools,
   IconUsers,
   IconZoomQuestion,
 } from "@tabler/icons-react";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 export type Skill = {
   name: string;
-  icon: React.ReactNode;
+  icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
 };
 
 export type SkillCategory = {
@@ -44,23 +51,23 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "ReactJS",
-        icon: <IconBrandReact />,
+        icon: IconBrandReact,
       },
       {
         name: "NextJS",
-        icon: <IconBrandNextjs />,
+        icon: IconBrandNextjs,
       },
       {
         name: "Vite",
-        icon: <IconBrandVite />,
+        icon: IconBrandVite,
       },
       {
         name: "TypeScript",
-        icon: <IconBrandTypescript />,
+        icon: IconBrandTypescript,
       },
       {
         name: "Mantine",
-        icon: <IconBrandMantine />,
+        icon: IconBrandMantine,
       },
     ],
   },
@@ -70,23 +77,23 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Node.js",
-        icon: <IconBrandNodejs />,
+        icon: IconBrandNodejs,
       },
       {
         name: "Express",
-        icon: <></>,
+        icon: IconExplicit,
       },
       {
         name: "Prisma",
-        icon: <IconBrandPrisma />,
+        icon: IconBrandPrisma,
       },
       {
         name: "RESTful APIs",
-        icon: <IconApi />,
+        icon: IconApi,
       },
       {
         name: "PostgreSQL",
-        icon: <IconDatabase />,
+        icon: IconDatabase,
       },
     ],
   },
@@ -96,15 +103,15 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Kotlin",
-        icon: <IconBrandKotlin />,
+        icon: IconBrandKotlin,
       },
       {
         name: "Flutter",
-        icon: <IconBrandFlutter />,
+        icon: IconBrandFlutter,
       },
       {
         name: "React Native",
-        icon: <IconBrandReactNative />,
+        icon: IconBrandReactNative,
       },
     ],
   },
@@ -114,31 +121,31 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Git",
-        icon: <IconGitMerge />,
+        icon: IconGitMerge,
       },
       {
         name: "Scrum",
-        icon: <></>,
+        icon: IconRecycle,
       },
       {
         name: "Docker",
-        icon: <IconBrandDocker />,
+        icon: IconBrandDocker,
       },
       {
         name: "ESLint",
-        icon: <></>,
+        icon: IconCode,
       },
       {
         name: "Prettier",
-        icon: <></>,
+        icon: IconBaseline,
       },
       {
         name: "Visual Studio Code",
-        icon: <IconBrandVisualStudio />,
+        icon: IconBrandVisualStudio,
       },
       {
         name: "Postman",
-        icon: <IconSend />,
+        icon: IconSend,
       },
     ],
   },
@@ -148,19 +155,19 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Learning new technologies",
-        icon: <IconEye />,
+        icon: IconEye,
       },
       {
         name: "Adaptability",
-        icon: <IconAccessible />,
+        icon: IconAccessible,
       },
       {
         name: "Problem-solving",
-        icon: <IconZoomQuestion />,
+        icon: IconZoomQuestion,
       },
       {
         name: "Teamwork",
-        icon: <IconAffiliate />,
+        icon: IconAffiliate,
       },
     ],
   },

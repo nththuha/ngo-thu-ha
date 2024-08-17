@@ -110,7 +110,6 @@ export const theme = createTheme({
       "#af6b1f",
       "#995b15",
     ],
-    // xGreen: [
     primary: [
       "#e0fbff",
       "#cbf2ff",
