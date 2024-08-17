@@ -1,10 +1,14 @@
-import { Flex } from "@mantine/core";
+import useTranslation from "@/hooks/useTranslation";
+import { Stack, Text } from "@mantine/core";
 
 const Contact = () => {
+  const t = useTranslation();
   return (
-    <Flex id="contact" h="100vh">
-      Contact
-    </Flex>
+    <Stack id="contact" h="100vh" gap={10}>
+      <Text fw="bold" fz={28}>
+        {t("Contact")}
+      </Text>
+    </Stack>
   );
 };
 

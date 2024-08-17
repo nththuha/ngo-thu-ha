@@ -1,42 +1,48 @@
 import useTranslation from "@/hooks/useTranslation";
 import { Burger, Drawer, Flex, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { scroller } from "react-scroll";
 import classes from "./Menu.module.scss";
+import { menu, MenuItem } from "./configs";
 
 const Menu = () => {
   const t = useTranslation();
   const [hash, setHash] = useState("");
   const [opened, { toggle, close }] = useDisclosure(false);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string, offset = -90) => {
     scroller.scrollTo(id, {
       delay: 0,
-      smooth: "easeInOutQuart",
-      offset: -90,
+      smooth: "easeInOutQuint",
+      offset,
     });
     setHash(id);
-    // window.location.hash = id;
+    setTimeout(() => (window.location.hash = id), 700);
   };
 
-  // useEffect(() => {
-  //   if (!hash) {
-  //     const hash = window.location.hash.substring(1);
-  //     scrollToSection(hash);
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  useEffect(() => {
+    if (!hash) {
+      const hash = window.location.hash.substring(1);
+      scrollToSection(hash, -110);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const items = menu.map(({ id, label }) => (
+  const handleItemMenuClick = (id: string) => {
+    scrollToSection(id);
+    close();
+  };
+
+  const items = menu.map((item: MenuItem) => (
     <Text
-      key={id}
+      key={item.id}
       className={classes.link}
-      onClick={() => scrollToSection(id)}
-      c={hash === id ? "primary" : "black"}
+      onClick={() => handleItemMenuClick(item.id)}
+      c={hash === item.id ? "primary" : "black"}
       fw={600}
     >
-      {t(label)}
+      {t(item.label)}
     </Text>
   ));
 
@@ -65,33 +71,5 @@ const Menu = () => {
     </Flex>
   );
 };
-
-type MenuItem = {
-  id: string;
-  label: string;
-};
-
-const menu: MenuItem[] = [
-  {
-    id: "about-me",
-    label: "About me",
-  },
-  {
-    id: "skills",
-    label: "Skills",
-  },
-  {
-    id: "experiences",
-    label: "Experiences",
-  },
-  {
-    id: "projects",
-    label: "Projects",
-  },
-  {
-    id: "contact",
-    label: "Contact",
-  },
-];
 
 export default Menu;
