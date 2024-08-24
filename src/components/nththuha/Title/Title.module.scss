@@ -6,21 +6,22 @@
     content: '';
     position: relative;
     display: block;
-    width: 220px;
+    width: 110px;
     height: 2px;
     background: #ddd;
-    top: 51px;
-    left: calc(50% - 110px);
+    top: 51.25px;
+    left: calc(50% - 55px);
+    border-radius: 100px;
   }
 
   ::after {
     content: '';
     position: relative;
     display: block;
-    width: 80px;
+    width: 40px;
     height: 4px;
     background: var(--mantine-primary-color-6);
     top: 2px;
-    left: calc(50% - 40px);
+    left: calc(50% - 20px);
   }
 }

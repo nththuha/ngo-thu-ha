@@ -6,6 +6,8 @@ import { scroller } from "react-scroll";
 import classes from "./Menu.module.scss";
 import { menu, MenuItem } from "./configs";
 
+const FIRST_HASH = "about-me";
+
 const Menu = () => {
   const t = useTranslation();
   const [hash, setHash] = useState("");
@@ -24,7 +26,7 @@ const Menu = () => {
   useEffect(() => {
     if (!hash) {
       const hash = window.location.hash.substring(1);
-      scrollToSection(hash, -110);
+      scrollToSection(hash !== "" ? hash : FIRST_HASH, -110);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
