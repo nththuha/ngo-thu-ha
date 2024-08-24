@@ -5,7 +5,7 @@ export default {
   "Skills": "Skills",
   "Experiences": "Experiences",
   "Projects": "Projects",
-  "Contact me": "Contact me",
+  "Contact": "Contact",
   "Built and designed by": "Built and designed by",
   "Copyright ©": "Copyright ©",
   "All Rights Reserved": "All Rights Reserved",

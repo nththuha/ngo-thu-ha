@@ -1,51 +1,49 @@
 import useTranslation from "@/hooks/useTranslation";
-import { Burger, Drawer, Flex, Group } from "@mantine/core";
+import { Burger, Drawer, Flex, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import classNames from "classnames";
+import { useEffect, useState } from "react";
+import { scroller } from "react-scroll";
 import classes from "./Menu.module.scss";
-
-type MenuItem = {
-  url: string;
-  label: string;
-};
+import { menu, MenuItem } from "./configs";
 
 const Menu = () => {
   const t = useTranslation();
-  const currentPath = window.location.pathname;
+  const [hash, setHash] = useState("");
   const [opened, { toggle, close }] = useDisclosure(false);
-  const menu: MenuItem[] = [
-    {
-      url: "/",
-      label: "About me",
-    },
-    {
-      url: "/skills",
-      label: "Skills",
-    },
-    {
-      url: "/experiences",
-      label: "Experiences",
-    },
-    {
-      url: "/projects",
-      label: "Projects",
-    },
-    {
-      url: "/contact-me",
-      label: "Contact me",
-    },
-  ];
 
-  const items = menu.map(({ url, label }) => (
-    <a
-      key={url}
-      href={url}
-      className={classNames(classes.link, {
-        [classes.active]: currentPath === url,
-      })}
+  const scrollToSection = (id: string, offset = -90) => {
+    scroller.scrollTo(id, {
+      delay: 0,
+      smooth: "easeInOutQuint",
+      offset,
+    });
+    setHash(id);
+    setTimeout(() => (window.location.hash = id), 700);
+  };
+
+  useEffect(() => {
+    if (!hash) {
+      const hash = window.location.hash.substring(1);
+      scrollToSection(hash, -110);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleItemMenuClick = (id: string) => {
+    scrollToSection(id);
+    close();
+  };
+
+  const items = menu.map((item: MenuItem) => (
+    <Text
+      key={item.id}
+      className={classes.link}
+      onClick={() => handleItemMenuClick(item.id)}
+      c={hash === item.id ? "primary" : "black"}
+      fw={600}
     >
-      {t(label)}
-    </a>
+      {t(item.label)}
+    </Text>
   ));
 
   return (

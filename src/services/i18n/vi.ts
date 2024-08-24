@@ -6,7 +6,7 @@ export default {
   "Skills": "Kĩ năng",
   "Experiences": "Kinh nghiệm",
   "Projects": "Dự án",
-  "Contact me": "Liên hệ tôi",
+  "Contact": "Liên hệ",
   "Built and designed by": "Được xây dựng và thiết kế bởi",
   "Copyright ©": "Bản quyền ©",
   "All Rights Reserved": "Đã được Bảo lưu",

@@ -1,14 +1,17 @@
 import useTranslation from "@/hooks/useTranslation";
-import { Flex } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
 
 const AboutMe = () => {
   const t = useTranslation();
   return (
-    <Flex direction="column">
+    <Stack id="about-me" gap={10}>
+      <Text fw="bold" fz={28}>
+        {t("About me")}
+      </Text>
       {Array.from({ length: 100 }).map((_, index) => {
         return <div key={index}>{t("Hello")}</div>;
       })}
-    </Flex>
+    </Stack>
   );
 };
 
