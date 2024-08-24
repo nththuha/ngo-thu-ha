@@ -10,7 +10,7 @@ export default ({ mode }: { mode: string }) => {
   return defineConfig({
     plugins: [react(), preload()],
     server: {
-      port: 9000,
+      port: 8000,
     },
     resolve: {
       alias: {
