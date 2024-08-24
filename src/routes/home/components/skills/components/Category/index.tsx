@@ -1,6 +1,6 @@
 import { Card, Text, ThemeIcon } from "@mantine/core";
-import { SkillCategory } from "../_configs";
-import SkillContainer from "./SkillContainer";
+import { SkillCategory } from "../../_configs";
+import SkillContainer from "../SkillContainer";
 
 type CategoryProps = {
   skillCategory: SkillCategory;
