@@ -9,7 +9,7 @@ import Skills from "./components/skills";
 const Home = () => {
   const isMobile = useWindowResize();
   return (
-    <Stack gap={isMobile ? 20 : 32} px={isMobile ? 10 : 36}>
+    <Stack gap={isMobile ? 20 : 44} px={isMobile ? 10 : 36}>
       <AboutMe />
       <Skills />
       <Experiences />
