@@ -1,6 +1,6 @@
 import Title from "@/components/nththuha/Title";
 import { useWindowResize } from "@/hooks/useWindowResize";
-import { Stack, Tabs } from "@mantine/core";
+import { Stack, Tabs, Text } from "@mantine/core";
 import { useState } from "react";
 import { skillCategories, SkillCategory } from "./_configs";
 import SkillContainer from "./components/SkillContainer";
@@ -34,7 +34,12 @@ const Skills = () => {
               leftSection={e.icon}
               c={e.name === activeTab?.name ? "primary" : "black"}
             >
-              {e.name}
+              <Text
+                fw="bold"
+                c={e.name === activeTab?.name ? "primary" : "black"}
+              >
+                {e.name}
+              </Text>
             </Tabs.Tab>
           ))}
         </Tabs.List>

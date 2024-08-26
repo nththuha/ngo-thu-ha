@@ -1,5 +1,5 @@
 import { useWindowResize } from "@/hooks/useWindowResize";
-import { Flex, Stack } from "@mantine/core";
+import { Center, Flex } from "@mantine/core";
 import AboutMe from "./components/about-me";
 import Contact from "./components/contact";
 import Experiences from "./components/experiences";
@@ -9,7 +9,7 @@ import Skills from "./components/skills";
 const Home = () => {
   const isMobile = useWindowResize();
   return (
-    <Stack align="center">
+    <Center>
       <Flex
         gap={isMobile ? 20 : 44}
         direction="column"
@@ -22,7 +22,7 @@ const Home = () => {
         <Projects />
         <Contact />
       </Flex>
-    </Stack>
+    </Center>
   );
 };
 

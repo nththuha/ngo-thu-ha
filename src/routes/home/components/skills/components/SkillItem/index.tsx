@@ -9,8 +9,10 @@ type SkillItemProps = {
 const SkillItem = ({ skill }: SkillItemProps) => {
   return (
     <UnstyledButton key={skill.name} className={classes.item}>
-      <skill.icon />
-      <Text mt={7}>{skill.name}</Text>
+      <skill.icon size={36} />
+      <Text mt={8} fz={18}>
+        {skill.name}
+      </Text>
     </UnstyledButton>
   );
 };

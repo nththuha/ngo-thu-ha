@@ -19,7 +19,7 @@ const ScrollToTopButton = () => {
           variant="outline"
           radius="xl"
           pos="fixed"
-          bottom={isMobile ? "0.5rem" : "1.9rem"}
+          bottom={isMobile ? "0.5rem" : "1.85rem"}
           right={isMobile ? "0.5rem" : "1.5rem"}
           w={40}
           h={40}
