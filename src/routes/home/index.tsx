@@ -1,4 +1,3 @@
-import { useWindowResize } from "@/hooks/useWindowResize";
 import { Center, Flex } from "@mantine/core";
 import AboutMe from "./components/about-me";
 import Contact from "./components/contact";
@@ -7,13 +6,12 @@ import Projects from "./components/projects";
 import Skills from "./components/skills";
 
 const Home = () => {
-  const isMobile = useWindowResize();
   return (
     <Center>
       <Flex
-        gap={isMobile ? 20 : 44}
+        gap={{ base: 20, sm: 44 }}
         direction="column"
-        w={isMobile ? "100vw" : "50rem"}
+        w={{ base: "100vw", sm: "50rem" }}
         px="10"
       >
         <AboutMe />
