@@ -1,3 +1,3 @@
-# ngo-thu-ha
+# Portfolio: ngo-thu-ha
 
 # React + TypeScript + Vite
