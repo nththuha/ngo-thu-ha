@@ -1,15 +1,16 @@
 import Title from "@/components/nththuha/Title";
-import useTranslation from "@/hooks/useTranslation";
-import { Stack } from "@mantine/core";
+import { Flex, Stack } from "@mantine/core";
+import Avatar from "./components/Avatar";
+import Information from "./components/Information";
 
 const AboutMe = () => {
-  const t = useTranslation();
   return (
     <Stack id="about-me" gap={10}>
       <Title content="About me" />
-      {Array.from({ length: 100 }).map((_, index) => {
-        return <div key={index}>{t("About me")}</div>;
-      })}
+      <Flex direction={{ base: "column", sm: "row" }} gap={20}>
+        <Avatar />
+        <Information />
+      </Flex>
     </Stack>
   );
 };
