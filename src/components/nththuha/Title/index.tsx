@@ -10,8 +10,14 @@ const Title = ({ content }: TitleProps) => {
   const t = useTranslation();
   return (
     <Flex justify="center" className={classes.container}>
-      <Text fw="bold" fz="30" ta="center" className={classes.text}>
-        {t(content).toUpperCase()}
+      <Text
+        fw="bold"
+        fz="30"
+        ta="center"
+        className={classes.text}
+        tt="uppercase"
+      >
+        {t(content)}
       </Text>
     </Flex>
   );

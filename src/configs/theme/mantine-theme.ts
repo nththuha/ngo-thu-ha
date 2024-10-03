@@ -17,7 +17,7 @@ const labelStyle = {
 
 const textStyle = {
   fontSize: "1rem",
-  fontWeight: "300",
+  fontWeight: "500",
   color: "var(--mantine-color-black)",
 };
 
@@ -96,31 +96,17 @@ export const theme = createTheme({
       "#c10008",
       "#a90003",
     ],
-    // https://mantine.dev/colors-generator/?color=754610
-    xOrange: [
-      // primary: [
-      "#fdf5ed",
-      "#f6eada",
-      "#efd1b0",
-      "#e8b780",
-      "#e3a259",
-      "#df9440",
-      "#de8d33",
-      "#c57826",
-      "#af6b1f",
-      "#995b15",
-    ],
     primary: [
-      "#e0fbff",
-      "#cbf2ff",
-      "#9ae2ff",
-      "#64d2ff",
-      "#3cc5fe",
-      "#23bcfe",
-      "#09b8ff",
-      "#00a1e4",
-      "#0090cd",
-      "#007cb5",
+      "#e2f8ff",
+      "#cdecff",
+      "#9ed6fc",
+      "#6bbff9",
+      "#42acf6",
+      "#28a0f4",
+      "#139af5",
+      "#0086db",
+      "#0077c5",
+      "#0067af",
     ],
   },
 });
