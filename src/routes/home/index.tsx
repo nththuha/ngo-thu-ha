@@ -11,7 +11,7 @@ const Home = () => {
       <Flex
         gap={{ base: 20, sm: 44 }}
         direction="column"
-        w={{ base: "100vw", sm: "50rem" }}
+        w={{ base: "100vw", sm: "55rem" }}
         px="10"
       >
         <AboutMe />
