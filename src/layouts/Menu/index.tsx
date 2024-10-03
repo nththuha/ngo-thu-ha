@@ -1,16 +1,14 @@
 import useTranslation from "@/hooks/useTranslation";
 import { Burger, Drawer, Flex, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { scroller } from "react-scroll";
 import classes from "./Menu.module.scss";
 import { menu, MenuItem } from "./configs";
 
-const FIRST_HASH = "about-me";
-
 const Menu = () => {
   const t = useTranslation();
-  const [hash, setHash] = useState("");
+  const [active, setActive] = useState("about-me");
   const [opened, { toggle, close }] = useDisclosure(false);
 
   const scrollToSection = (id: string, offset = -90) => {
@@ -19,20 +17,11 @@ const Menu = () => {
       smooth: "easeInOutQuint",
       offset,
     });
-    setHash(id);
-    setTimeout(() => (window.location.hash = id), 700);
   };
-
-  useEffect(() => {
-    if (!hash) {
-      const hash = window.location.hash.substring(1);
-      scrollToSection(hash !== "" ? hash : FIRST_HASH, -110);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const handleItemMenuClick = (id: string) => {
     scrollToSection(id);
+    setActive(id);
     close();
   };
 
@@ -41,7 +30,7 @@ const Menu = () => {
       key={item.id}
       className={classes.link}
       onClick={() => handleItemMenuClick(item.id)}
-      c={hash === item.id ? "primary" : "black"}
+      c={active === item.id ? "primary" : "black"}
       fw={600}
     >
       {t(item.label)}
