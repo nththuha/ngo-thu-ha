@@ -13,6 +13,7 @@ const Home = () => {
         direction="column"
         w={{ base: "100vw", sm: "55rem" }}
         px="10"
+        mb={{ base: 20, sm: 44 }}
       >
         <AboutMe />
         <Skills />
