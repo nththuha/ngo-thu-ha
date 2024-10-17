@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <Stack id="contact" gap={10}>
       <Title content="Contact" />
-      {Array.from({ length: 200 }).map((_, index) => {
+      {Array.from({ length: 300 }).map((_, index) => {
         return <div key={index}>{t("Contact")}</div>;
       })}
     </Stack>
