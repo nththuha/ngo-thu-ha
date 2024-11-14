@@ -14,7 +14,6 @@ const ServiceWrapper = ({ children }: ServiceWrapperProps) => {
   const isMobile = useWindowResize("1200px");
   const headerHeight = scroll.y >= 10 ? "4.5rem" : "6.5rem";
   const footerHeight = isMobile ? "9.5rem" : "6rem";
-
   return (
     <AppShell mih="100vh" header={{ height: headerHeight }}>
       <AppShell.Header withBorder={scroll.y >= 10}>
