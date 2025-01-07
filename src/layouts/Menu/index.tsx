@@ -1,14 +1,12 @@
 import useTranslation from "@/hooks/useTranslation";
 import { Burger, Drawer, Flex, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useState } from "react";
 import { scroller } from "react-scroll";
 import classes from "./Menu.module.scss";
 import { menu, MenuItem } from "./configs";
 
 const Menu = () => {
   const t = useTranslation();
-  const [active, setActive] = useState("about-me");
   const [opened, { toggle, close }] = useDisclosure(false);
 
   const scrollToSection = (id: string, offset = -90) => {
@@ -21,7 +19,6 @@ const Menu = () => {
 
   const handleItemMenuClick = (id: string) => {
     scrollToSection(id);
-    setActive(id);
     close();
   };
 
@@ -30,7 +27,6 @@ const Menu = () => {
       key={item.id}
       className={classes.link}
       onClick={() => handleItemMenuClick(item.id)}
-      c={active === item.id ? "primary" : "black"}
       fw={600}
     >
       {t(item.label)}
