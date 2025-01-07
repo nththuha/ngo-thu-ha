@@ -37,6 +37,7 @@ const Skills = () => {
               <Text
                 fw="bold"
                 c={e.name === activeTab?.name ? "primary" : "black"}
+                fz={14}
               >
                 {e.name}
               </Text>

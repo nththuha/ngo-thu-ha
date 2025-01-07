@@ -21,7 +21,6 @@ import {
   IconDatabase,
   IconDeviceMobile,
   IconExplicit,
-  IconEye,
   IconGitMerge,
   IconProps,
   IconRecycle,
@@ -153,10 +152,6 @@ export const skillCategories: SkillCategory[] = [
     name: "Soft skills",
     icon: <IconUsers />,
     skills: [
-      {
-        name: "Learning new technologies",
-        icon: IconEye,
-      },
       {
         name: "Adaptability",
         icon: IconAccessible,
