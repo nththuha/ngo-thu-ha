@@ -1,0 +1,20 @@
+.form {
+  flex: 1;
+  padding: var(--mantine-spacing-xl);
+  border-left: 0;
+
+  // @media (max-width: $mantine-breakpoint-sm) {
+  //   padding: var(--mantine-spacing-md);
+  //   padding-left: var(--mantine-spacing-md);
+  // }
+}
+
+.fields {
+  margin-top: -12px;
+}
+
+.control {
+  // @media (max-width: $mantine-breakpoint-sm) {
+  //   flex: 1;
+  // }
+}
