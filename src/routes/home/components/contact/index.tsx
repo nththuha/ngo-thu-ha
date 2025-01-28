@@ -1,15 +1,12 @@
 import Title from "@/components/nththuha/Title";
-import useTranslation from "@/hooks/useTranslation";
 import { Stack } from "@mantine/core";
+import ContactCard from "./components/ContactCard";
 
 const Contact = () => {
-  const t = useTranslation();
   return (
     <Stack id="contact" gap={10}>
       <Title content="Contact" />
-      {Array.from({ length: 100 }).map((_, index) => {
-        return <div key={index}>{t("Contact")}</div>;
-      })}
+      <ContactCard />
     </Stack>
   );
 };
