@@ -1,12 +1,12 @@
 import { Flex, Paper } from "@mantine/core";
-import CardIcon from "../CardIcon";
 import ContactForm from "../ContactForm";
+import ContactInfo from "../ContactInfo";
 
 const ContactCard = () => {
   return (
     <Paper shadow="lg" radius="md" withBorder>
       <Flex direction={{ base: "column", sm: "row" }} gap={0}>
-        <CardIcon />
+        <ContactInfo />
         <ContactForm />
       </Flex>
     </Paper>
