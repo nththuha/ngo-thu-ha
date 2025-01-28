@@ -1,6 +1,6 @@
 import { Center, Flex } from "@mantine/core";
 import AboutMe from "./components/about-me";
-import Contact from "./components/contact";
+import Contact from "./components/contact-2";
 import Experiences from "./components/experiences";
 import Projects from "./components/projects";
 import Skills from "./components/skills";

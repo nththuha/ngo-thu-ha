@@ -1,9 +1,9 @@
 import {
+  BackgroundImage,
   Button,
   Group,
   Paper,
   SimpleGrid,
-  Text,
   TextInput,
   Textarea,
 } from "@mantine/core";
@@ -14,25 +14,18 @@ const ContactCard = () => {
   return (
     <Paper shadow="md" radius="lg">
       <div className={classes.wrapper}>
-        <div
+        <BackgroundImage
           className={classes.contacts}
-          style={{ backgroundImage: "/img/bg.svg" }}
+          src="/img/bg.svg"
+          radius="sm"
         >
-          <Text fz="lg" fw={700} className={classes.title} c="#fff">
-            Contact information
-          </Text>
-
           <ContactIconsList />
-        </div>
+        </BackgroundImage>
 
         <form
           className={classes.form}
           onSubmit={(event) => event.preventDefault()}
         >
-          <Text fz="lg" fw={700} className={classes.title}>
-            Get in touch
-          </Text>
-
           <div className={classes.fields}>
             <SimpleGrid cols={{ base: 1, sm: 2 }}>
               <TextInput label="Your name" placeholder="Your name" />
