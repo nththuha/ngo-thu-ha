@@ -1,20 +1,15 @@
 import { resolver, theme } from "@/configs/theme/mantine-theme";
-import guestRoutes from "@/router/guest.route";
+import routers from "@/router";
 import { MantineProvider } from "@mantine/core";
 import { ModalsProvider } from "@mantine/modals";
 import { Notifications } from "@mantine/notifications";
-import { useMemo } from "react";
 import { useRoutes } from "react-router-dom";
 
 function App() {
-  const routes = useMemo(() => {
-    return _buildRoutes();
-  }, []);
-
   return (
     <MantineProvider theme={theme} cssVariablesResolver={resolver}>
       <ModalsProvider>
-        {useRoutes(routes)}
+        {useRoutes(routers)}
         <Notifications position="top-right" zIndex={1000} />
       </ModalsProvider>
     </MantineProvider>
@@ -22,7 +17,3 @@ function App() {
 }
 
 export default App;
-
-function _buildRoutes() {
-  return guestRoutes;
-}
