@@ -1,12 +1,10 @@
 import react from "@vitejs/plugin-react";
 import path from "path";
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 import preload from "vite-plugin-preload";
 
 
-export default ({ mode }: { mode: string }) => {
-  const env = loadEnv(mode, process.cwd(), "");
-
+export default () => {
   return defineConfig({
     plugins: [react(), preload()],
     server: {
@@ -16,9 +14,6 @@ export default ({ mode }: { mode: string }) => {
       alias: {
         "@": path.resolve(__dirname, "./src"),
       },
-    },
-    define: {
-      "import.meta.env.SERVER_URL": JSON.stringify(env.SERVER_URL),
     },
   });
 };
